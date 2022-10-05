@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(230, 227, 212);
+  font-family: "Roboto", sans-serif;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.fs-40 {
+  font-size: 40px;
+}
+
+.fs-28 {
+  font-size: 28px;
+}
+
+.fs-32 {
+  font-size: 32px;
+}
+
+.fs-24 {
+  font-size: 24px;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fw-800 {
+  font-weight: 800;
+}
+
+.margin-1 {
+  margin: 1rem;
+}
+
+.margin-1-0 {
+  margin: 1rem 0;
+}
+
+.margin-0-1 {
+  margin: 0 1rem;
+}
+
+.margin-2 {
+  margin: 2rem;
+}
+
+.margin-2-0 {
+  margin: 2rem 0;
+}
+
+.margin-0-2 {
+  margin: 0 2rem;
+}
+
+.margin-3 {
+  margin: 3rem;
+}
+
+.margin-3-0 {
+  margin: 3rem 0;
+}
+
+.margin-0-3 {
+  margin: 0 3rem;
+}
+
+.margin-3-6 {
+  margin: 3rem 6rem;
+}
+
+.padding-1 {
+  padding: 1rem;
+}
+
+.padding-1-0 {
+  padding: 1rem 0;
+}
+
+.padding-0-1 {
+  padding: 0 1rem;
+}
+
+.padding-2 {
+  padding: 2rem;
+}
+
+.padding-2-0 {
+  padding: 2rem 0;
+}
+
+.padding-0-2 {
+  padding: 0 2rem;
+}
+
+.padding-3 {
+  padding: 3rem;
+}
+
+.padding-3-0 {
+  padding: 3rem 0;
+}
+
+.padding-0-3 {
+  padding: 0 3rem;
+}
+
+.width-200 {
+  width: 220px;
+}
+
+.width-100p {
+  width: 100%;
+}
+
+.width-80 {
+  width: 80%;
+}
+
+.width-20 {
+  width: 20%;
+}
+
+.width-70 {
+  width: 80%;
+}
+
+.margin-5px {
+  margin: 5px 0;
+}
+
+a {
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: blueColor;
+  color: whiteColor;
+  border-radius: 6px;
+  border: 3px solid rgb(59, 139, 234);
+}
+
+.text-cap {
+  text-transform: capitalize;
+}
+
+.text-upp {
+  text-transform: uppercase;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+button {
+  cursor: pointer;
+}
+
+.none {
+  display: none;
+}
+
+.padding-5px {
+  padding: 5px;
+}
+
+.blue {
+  color: rgb(59, 139, 234);
+}
+
+.pink {
+  color: rgb(178, 56, 79);
+}
+
+.gray {
+  color: rgb(230, 227, 212);
+}
+
+.darkGray {
+  color: rgb(133, 145, 171);
+}
+
+.lightBlueColor {
+  color: rgb(197, 218, 246);
+}
+
+.btn {
+  background-color: rgb(197, 218, 246);
+  padding: 1rem 1.5rem;
+}
+
+.box {
+  width: 300px;
+  padding: 2rem;
+  border-radius: 6px;
+  position: relative;
+  border: 2px solid rgb(133, 145, 171);
+  background-color: rgb(197, 218, 246);
+  margin: 1rem;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cross {
+  position: absolute;
+  top: -19px;
+  right: -13px;
+  background-color: rgba(133, 145, 171, 0);
+  border-radius: 4px;
+  border: none;
+}
+
+.start {
+  width: 100px;
+  background-color: rgb(133, 145, 171);
+  border-radius: 4px;
+  border: none;
+}
+
+.arrow {
+  background-color: rgb(133, 145, 171);
+  color: rgb(197, 218, 246);
+  border: none;
+  border-radius: 3px;
+  padding: 6px 12px;
+  margin: 0 3px;
+}
+
+.start-count {
+  margin-top: 6px;
+}/*# sourceMappingURL=style.css.map */
