@@ -32,7 +32,8 @@ class Timer extends React.Component {
         hour: this.props.time.hour,
       });
     }
-    setInterval(() => {
+    this.timer = setInterval(() => {
+      console.log("hi");
       this.setState({
         milliSecond: this.state.milliSecond + 1,
       });
@@ -58,6 +59,7 @@ class Timer extends React.Component {
   }
   componentWillUnmount() {
     this.props.setTime(this.state);
+    clearInterval(this.timer);
   }
   render() {
     return (

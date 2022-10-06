@@ -15,6 +15,7 @@ function CountDownBtn(props) {
 
 class Timer extends React.Component {
   constructor(props) {
+    console.log(props);
     super(props);
     this.state = {
       second: 0,
@@ -29,22 +30,26 @@ class Timer extends React.Component {
       hour: this.props.time.hour,
     });
 
-    setInterval(() => {
+    this.timer = setInterval(() => {
       if (this.state.second > 0) {
         this.setState({
           second: this.state.second - 1,
         });
       }
-      if (this.state.second <= 1 && this.state.minute > 0) {
+      if (this.state.second === 0 && this.state.minute > 0) {
         this.setState({
           second: 59,
           minute: this.state.minute - 1,
         });
       }
-      if (this.state.minute <= 1 && this.state.hour > 0) {
+      if (
+        this.state.minute === 0 &&
+        this.state.second <= 1 &&
+        this.state.hour >= 1
+      ) {
         this.setState({
           minute: 59,
-          second: 59,
+          second: 60,
           hour: this.state.hour - 1,
         });
       }
@@ -56,13 +61,12 @@ class Timer extends React.Component {
       this.state.minute === 0 &&
       this.state.second === 0
     ) {
-      this.componentWillUnmount();
-    } else if (this.props.time.start === "stopped") {
-      this.props.handleSetTime(this.state);
+      this.props.handleChange();
     }
   }
   componentWillUnmount() {
-    this.props.handleChange();
+    this.props.setTime(this.state);
+    clearInterval(this.timer);
   }
   render() {
     return (
@@ -90,12 +94,22 @@ class CountDown extends React.Component {
       isresumed: false,
     };
   }
-  handleSetTime = (timer) => {
+  setTime = (timer) => {
     this.setState({
       second: timer.second,
       minute: timer.minute,
       hour: timer.hour,
     });
+    if (timer.minute > 0 || timer.second > 0 || timer.hour > 0) {
+      this.setState({
+        start: "stopped",
+      });
+    }
+    if (this.state.start === false) {
+      setTimeout(() => {
+        alert("count down ended");
+      }, 1000);
+    }
   };
   handleChange = () => {
     this.setState({
@@ -108,7 +122,7 @@ class CountDown extends React.Component {
         <h2 className="text-cap fs-28 margin-1 pink">Count down</h2>
         <button
           onClick={() => {
-            this.props.handleChange(`isStopWatchOpen`);
+            this.props.handleChange(`isCountDownOpen`);
           }}
           className="fs-28 fw-600 cross"
         >
@@ -167,7 +181,6 @@ class CountDown extends React.Component {
             setTime={this.setTime}
             time={this.state}
             handleChange={this.handleChange}
-            handleSetTime={this.handleSetTime}
           />
         )}
         <div className="flex justify-center">
@@ -204,14 +217,14 @@ class CountDown extends React.Component {
         </div>
         {this.state.start ? (
           <div>
-            {this.state.start === "stopped" &&
-            this.state.isresumed === false ? (
+            {this.state.start === "stopped" ? (
               <>
                 <button
                   className="start start-count text-cap fs-20"
                   onClick={() => {
                     this.setState({
                       isresumed: true,
+                      start: true,
                     });
                   }}
                 >
